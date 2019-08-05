@@ -1,0 +1,7 @@
+.video {
+    position: absolute;
+    right: 5%;
+    border: 1px solid black;
+    width: 700px;
+    height: 340px;
+}

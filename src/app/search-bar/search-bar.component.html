@@ -1,0 +1,9 @@
+<form [formGroup]="urlForm" (ngSubmit)="onSubmit()">
+
+    <label class="urlInputLabel">
+        Enter youtube video url:
+        <input type="text" id="url" name="url" formControlName="url" class="urlInput" required>
+    </label>
+    <button type="submit" class="submitButton" [disabled]="!urlForm.valid">Submit</button>
+
+</form>
