@@ -17,6 +17,8 @@ export class BookmarksComponent implements OnInit {
     url;
     subscription;
     count;
+    bookmarks;
+    clicked = false;
 
     constructor(private messageService: MessageService, private http: HttpClient) {
         this.subscription = this.messageService.getUrl()
@@ -44,6 +46,18 @@ export class BookmarksComponent implements OnInit {
             this.count = 'Please enter or select video url!';
             setTimeout(location.reload.bind(location), 2000);
         }
+    }
+
+    showBookmarks(data) {
+        this.http.get('http://localhost/getBookmarks.php')
+            .subscribe((data) => this.showBookmarks(data));
+        this.clicked = true;
+        this.bookmarks = data;
+    }
+
+    closeBookmarks() {
+        this.clicked = false;
+        location.reload();
     }
 
 }

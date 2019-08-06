@@ -1,4 +1,5 @@
 <div class="history">
+    <p class="heading">History</p>
     <ul *ngFor="let data of httpData">
         <li style="list-style-type: none;">Url: <p class="link" (click)="play(data.url)">{{data.url}}</p></li>
     </ul>
