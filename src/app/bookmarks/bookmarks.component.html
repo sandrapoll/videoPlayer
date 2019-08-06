@@ -1,7 +1,7 @@
 <div class="bookmarkDiv">
     <button class="bookmark" (click)="bookmark()">Bookmark</button>
     <button class="count"> {{count}}</button>
-    <button class="bookmark" (click)="showBookmarks()">All bookmarks</button>
+    <button class="bookmark" (click)="displayBookmarks()">All bookmarks</button>
     <div *ngIf="clicked === true">
         <ul *ngFor="let data of bookmarks">
             <li style="list-style-type: none;">Url: <p class="link">{{data.url}}</p></li>

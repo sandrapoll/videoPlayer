@@ -28,6 +28,8 @@ export class BookmarksComponent implements OnInit {
     ngOnInit() {
         this.http.get('http://localhost/getBookmarkCount.php')
             .subscribe((data) => this.displayData(data));
+        this.http.get('http://localhost/getBookmarks.php')
+            .subscribe((data) => this.getBookmarks(data));
     }
 
     displayData(data) {
@@ -48,11 +50,12 @@ export class BookmarksComponent implements OnInit {
         }
     }
 
-    showBookmarks(data) {
-        this.http.get('http://localhost/getBookmarks.php')
-            .subscribe((data) => this.showBookmarks(data));
-        this.clicked = true;
+    getBookmarks(data) {
         this.bookmarks = data;
+    }
+
+    displayBookmarks() {
+        this.clicked = true;
     }
 
     closeBookmarks() {
